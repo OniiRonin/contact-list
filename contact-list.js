@@ -57,4 +57,24 @@ function imprimirContactos() {
     listaContactos.forEach(contacto => console.log(contacto));
 }
 
+function actualizarContacto(id, nuevoContacto) {
+    const indice = listaContactos.findIndex(contacto => contacto.id === id);
+    if (indice > -1) {
+        listaContactos[indice] = nuevoContacto;
+    }
+}
+
+actualizarContacto(1, {
+    id: 1,
+    nombres: "Danna",
+    apellidos: "Carreño",
+    telefono: "3216549874",
+    ubicaciones: [
+        {
+            ciudad: "Cucuta",
+            direccion: "Cll 11 No. 23 -32"
+        }
+    ]
+})
+
 imprimirContactos();
